@@ -12,11 +12,6 @@ weather_dict={
     'Temp':[],
 }
 
-def start_app():
-    print('Welcome to Doha weather App')
-    input('Get hourly temp')
-
-
 def get_weather():
     print('DOHA WEATHER APP')
     try:
@@ -37,7 +32,7 @@ def get_weather():
         weather_info = pd.read_csv('weather.csv', sep='\t')
         min_temp=weather_info['Temp'].min()
         max_temp=weather_info['Temp'].max()
-        print(f'Maximum Temperature:{max_temp}° C \t Minimum Temperature : {min_temp}° C\n')
+        print(f'\nMaximum Temperature:{max_temp}° C \nMinimum Temperature : {min_temp}° C\n')
         print(weather_info)
     except FileNotFoundError:
         print('no file')
@@ -46,4 +41,3 @@ def get_weather():
 
     
 get_weather()
-
